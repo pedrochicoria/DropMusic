@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- The core configuration file for the framework is the default (struts.xml) file
+and should reside on the classpath of the webapp (generally /WEB-INF/classes). -->
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- devMode equals debug information and reload everything for every request -->
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.action.excludePattern" value="/ws"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="index">
+            <result>index.jsp</result>
+        </action>
+
+        <action name="login">
+            <result>login.jsp</result>
+        </action>
+
+        <action name="signin" class="login.action.LoginAction" method="login">
+            <result name="success">homepage.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="signup">
+            <result>register.jsp</result>
+        </action>
+
+        <action name="homepage" class="login.action.LoginAction" method="checkLogin">
+            <result name="success">homepage.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="register" class="register.action.RegisterAction" method="execute" >
+            <result name="success">homepage.jsp</result>
+            <result name="error">error.jsp</result>
+            <result name="login">register.jsp</result>
+        </action>
+
+        <action name="logout" class="login.action.LoginAction" method="logout">
+            <result name="success">index.jsp</result>
+        </action>
+
+        <action name="insertartist" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">insertartist.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="editartist" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">editartist.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="deleteartist" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">removeartist.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+        <action name="insertalbum" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">insertalbum.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="editalbum" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">editalbum.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="deletealbum" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">removealbum.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="insertmusic" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">insertmusic.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="editmusic" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">editmusic.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="deletemusic" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">removemusic.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="createartist" class="user.action.UserAction" method="execute">
+            <result name="success">results/createartistresult.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="changeartist" class="user.action.UserAction" method="execute">
+            <result name="success">results/changeartistresult.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="removeartist" class="user.action.UserAction" method="execute">
+            <result name="success">results/removeartistresults.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="createalbum" class="user.action.UserAction" method="execute">
+            <result name="success">results/createalbumresult.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="changealbum" class="user.action.UserAction" method="execute">
+            <result name="success">results/changealbumresult.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="removealbum" class="user.action.UserAction" method="execute">
+            <result name="success">results/removealbumresults.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="createmusic" class="user.action.UserAction" method="execute">
+            <result name="success">results/createmusicresults.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="changemusic" class="user.action.UserAction" method="execute">
+            <result name="success">results/changemusicresults.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="removemusic" class="user.action.UserAction" method="execute">
+            <result name="success">results/removemusicresults.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="listartist" class="user.action.UserAction" method="execute">
+            <result name="success">listartists.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="detailsofartist" class="user.action.UserAction" method="execute">
+            <result name="success">detailsofartist.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="listalbums" class="user.action.UserAction" method="execute">
+            <result name="success">listalbums.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="detailsofalbum" class="user.action.UserAction" method="execute">
+            <result name ="success">detailsofalbum.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="listmusics" class="user.action.UserAction" method="execute">
+            <result name="success">listmusics.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="detailsofmusic" class="user.action.UserAction" method="execute">
+            <result name ="success">detailsofmusic.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="writereview" class="user.action.UserAction" method="execute">
+            <result name="success">results/insertreviewresult.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="insertreview" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">insertreview.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="giveprivileges" class="login.action.LoginAction"  method="checkLogin">
+            <result name="success">grantprivileges.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+        <action name="grantprivileges" class="user.action.UserAction" method="execute">
+            <result name="success">results/privilegesresult.jsp</result>
+            <result name="error">index.jsp</result>
+        </action>
+
+
+        <action name="dropboxassociation" class="user.action.UserAction" method="dropBroxAssociation">
+            <result name="success" type = "redirect">${dropboxUrl}</result>
+
+        </action>
+
+        <action name="dropboxAssociantion2" class="user.action.UserAction" method="dropboxAssociation2">
+            <result name="success">homepage.jsp</result>
+            <result name="error">index.jsp</result>
+            <result name="login">homepage.jsp</result>
+
+        </action>
+
+       <action name="dropboxlogin" class="login.action.LoginAction" method="dropBroxLogin">
+            <result name="success" type = "redirect">${dropboxUrl}</result>
+           <result name="error">index.jsp</result>
+
+        </action>
+
+
+        <action name="dropboxlogin2" class="login.action.LoginAction" method="dropboxLogin2">
+            <result name="success">homepage.jsp</result>
+            <result name="login">login.jsp</result>
+            <result name="error">index.jsp</result>
+
+        </action>
+
+
+
+
+    </package>
+</struts>
+
